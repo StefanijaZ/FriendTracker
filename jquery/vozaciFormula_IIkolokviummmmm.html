@@ -1,0 +1,78 @@
+<!doctype html>
+<html>	<head>
+		<title>Components</title>		
+	 <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script type="text/javascript">
+			$(document).ready(function(){							
+					$('#dodadiDesno').click(function() {  
+				  	if ($('#list1 li input:checked').parent().attr("title1") ){
+						$('#list1 li input:checked').parent().remove().appendTo('#list2'); 
+						$('#list2 li input:checked').attr("checked",false);     }
+					else{
+						$('#list1 li input:checked').attr("checked",false);
+						alert('Немате изберено опција');	
+					}	}); 
+					$('#dodadiDesno1').click(function() {  
+				  	if ($('#list3 li input:checked').parent().attr("title1") ){
+						$('#list3 li input:checked').parent().remove().appendTo('#list2'); 
+						$('#list2 li input:checked').attr("checked",false);     }
+					else{
+						$('#list1 li input:checked').attr("checked",false);
+						alert('Немате изберено опција');	
+					}	});
+
+				 $('#dodadiLevo').click(function() {  
+				 	$('#list2 li input:checked').parent().remove().appendTo('#list1'); 
+					$('#list1 li input:checked').attr("checked",false);
+        			});	 
+
+					 $('#dodadiLevo1').click(function() {  
+				 	$('#list2 li input:checked').parent().remove().appendTo('#list3'); 
+					$('#list3 li input:checked').attr("checked",false);
+        			});	 });
+        			</script>
+        			<style> 
+			.container{
+				float:left;
+				margin:20px;
+				padding: 20px;
+				border-left: 1px lightgray solid; }
+			#list1, #list2,#list3 {
+				list-style-type: none;		}
+				.row-selected{
+ 			background:lightblue;		}
+ 			#t1 {
+ 				display: none;
+ 			}
+ 			
+ 		</style>  </head>	<body>
+        	<div class="container" style="float:left" id="accordion">
+			<strong>Возачи 2016</strong>
+			<ul id="list1">
+			<li title1="1">	<input type="checkbox"/> Петре Петрески </li>		
+			<li title1="1" > <input type="checkbox"/>Аце Ацевски </li>
+			</ul>    </div>
+			<div class="container" style="float:left" id="accordion">
+			<strong>Возачи 2017</strong>
+			<ul id="list3">
+			<li title1="1" ><input type="checkbox"/>Ивана Петревски </li>								
+			<li title1="1" > <input type="checkbox"/>Мара Ацевски </li>
+			</ul>    </div>
+
+		<div class="container" style="float:left">
+			<strong>Омилени возачи</strong>
+			<ul id="list2">   </ul>	</div>
+		<div style="clear:both"></div>
+			<div style="margin-left:230px; float:left;"><input type="button" id="dodadiDesno" value=">>"/></div>
+			<div style="margin-left:160px; float:left;"><input type="button" id="dodadiDesno1" value=">>"/></div>
+            <div style="margin-left:200px;float:left;"><input type="button" id="dodadiLevo" value="<<16"/></div>
+            <div style="margin-left:40px;float:left;"><input type="button" id="dodadiLevo1" value="<<17"/></div>
+           <div style="clear:both"></div>
+    </div> <br>
+ <a href="href="http://www.facebook.com/""> <img src="facebook.png" ></a>
+  <a href="href="http://www.twitter.com/""> <img src="twitter.png" ></a>
+	</body></html>

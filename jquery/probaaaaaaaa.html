@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="/path/to/bootstrap.min.css">
+<script src="/path/to/jquery.min.js"></script>
+<script src="/path/to/bootstrap.min.js"></script>
+<script src="/path/to/password-score.js"></script>
+<script src="/path/to/password-score-options.js"></script>
+<script src="/path/to/bootstrap-strength-meter.js"></script>
+<script>
+$(document).ready(function() {
+  $('#example').strengthMeter('text', {
+    container: input.parent(),
+    hierarchy: {
+      '0': ['text-danger', 'ridiculous'],
+      '10': ['text-danger', 'very weak'],
+
+      '20': ['text-warning', 'weak'],
+
+      '30': ['text-warning', 'good'],
+
+      '40': ['text-success', 'strong'],
+
+      '50': ['text-success', 'very strong']
+
+    },
+
+    passwordScore: {
+
+      options: [],
+
+      append: true
+
+    }
+
+  });
+
+});
+</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+  $('#example').strengthMeter('tooltip', {
+    hierarchy: {
+      '0': 'ridiculous',
+      '10': 'very weak',
+      '20': 'weak',
+      '30': 'good',
+      '40': 'strong',
+      '50': 'very strong'
+    },
+    tooltip: {
+      placement: 'right'
+    },
+    passwordScore: {
+      options: [],
+      append: true
+    }
+  });
+});
+
+</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+  $('#example-progress').strengthMeter('progressBar', {
+    container: $('#progress-container')
+    base: 80,
+    hierarchy: {
+      '0': 'progress-bar-danger',
+      '25': 'progress-bar-warning',
+      '50': 'progress-bar-success'
+    },
+    passwordScore: {
+      options: [],
+      append: true
+    }
+  });
+});
+</script>
+</head>
+<body>
+ <input type="password" id="example">
+ </body>
+</html>
